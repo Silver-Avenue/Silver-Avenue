@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Silver Avenue</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#000000">
+
+</head>
+
+<body>
+
+<header>
+
+<img src="images/logo.png" class="logo">
+
+<nav>
+
+<button onclick="ouvrirPage('accueil')">Accueil</button>
+
+<button onclick="ouvrirPage('parfums')">Parfums</button>
+
+<button onclick="ouvrirPage('marques')">Marques</button>
+
+<button onclick="ouvrirPage('livraison')">Livraison</button>
+
+<button onclick="ouvrirPage('contact')">Contact</button>
+
+<div class="panier" onclick="ouvrirPanier()">
+
+<button onclick="ouvrirPanier()">
+🛒 Panier (<span id="compteur-panier">0</span>)
+</button>
+</div>
+
+<nav>
+
+</header>
+
+<section id="accueil" class="page">
+
+<h1>SILVER AVENUE</h1>
+
+<p>La parfumerie de luxe à Abidjan depuis 2025</p>
+
+
+<h2>Qui sommes-nous ?</h2>
+
+<p>
+
+Nous sommes une parfumerie ivoirienne moderne qui incarne l'art du parfum et l'élégance olfactive. Depuis 2025, Silver Avenue s'est donnée pour mission de faire découvrir à l'Afrique de l'Ouest les créations des plus grandes maisons de parfumerie des Émirats Arabes Unis.
+
+</p>
+
+<p>
+
+Nous proposons une large sélection de parfums rares, de fragrances tendances et d'expériences olfactives uniques. Notre objectif est de rendre le luxe du parfum accessible à tous tout en offrant un service de qualité à nos clients.
+
+</p>
+
+<div class="best-seller">
+
+<h2>Parfums populaires</h2>
+
+<div class="best-grid">
+
+<div>
+
+<img src="images/parfum4.jpg">
+
+<p>Bade'e Al Oud Amethyst</p>
+
+</div>
+
+<div>
+
+<img src="images/parfum2.jpg">
+
+<p>Mohra Silky Rose</p>
+
+</div>
+
+<div>
+
+<img src="images/parfum9.jpg">
+
+<p>Odyssey Marshmallow</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button onclick="ouvrirPage('parfums')">
+Découvrir nos parfums
+</button>
+<div class="about-home">
+
+</section>
+
+<section id="parfums" class="page">
+
+<h2>Nos Parfums</h2>
+
+<div class="produits">
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum1.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Noble Blush — Lattafa',
+'images/parfum1.jpg',
+'sucré, poudré, amande, vanille',
+'amande',
+'rose',
+'musc, vanille'
+)">
+Noble Blush — Lattafa
+</h3>
+
+<p>Accords : sucré / poudré / amande / vanille</p>
+
+<button onclick="ajouterPanier('Noble Blush Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum2.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Mohra Silky Rose — Lattafa',
+'images/parfum2.jpg',
+'rose, musqué, fruité, vanille',
+'fruits rouges',
+'rose',
+'musc, vanille'
+)">
+Mohra Silky Rose — Lattafa
+</h3>
+
+<p>Accords : rose / musqué / fruité / vanille</p>
+
+<button onclick="ajouterPanier('Mohra Silky Rose Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="maison-asrar">
+
+<img src="images/parfum3.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Vanilla Voyage — Maison Asrar',
+'images/parfum3.jpg',
+'vanille, caramel, ambre',
+'caramel',
+'vanille',
+'ambre'
+)">
+Vanilla Voyage — Maison Asrar
+</h3>
+
+<p>Accords : vanille / caramel / ambre</p>
+
+<button onclick="ajouterPanier('Vanilla Voyage Maison Asrar')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum4.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Badee Al Oud Amethyst — Lattafa',
+'images/parfum4.jpg',
+'rose, oud, ambre',
+'bergamote',
+'rose',
+'oud, ambre'
+)">
+Badee Al Oud Amethyst — Lattafa
+</h3>
+
+<p>Accords : rose / oud / ambre</p>
+
+<button onclick="ajouterPanier('Badee Al Oud Amethyst Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum5.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Badee Al Oud Sublime — Lattafa',
+'images/parfum5.jpg',
+'fruité, rose, tropical',
+'pomme',
+'rose',
+'vanille'
+)">
+Badee Al Oud Sublime — Lattafa
+</h3>
+
+<p>Accords : fruité / rose / tropical</p>
+
+<button onclick="ajouterPanier('Badee Al Oud Sublime Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum6.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Tharwah Gold — Lattafa',
+'images/parfum6.jpg',
+'agrumes, vanille, fleurs blanches',
+'citron',
+'fleurs blanches',
+'vanille'
+)">
+Tharwah Gold — Lattafa
+</h3>
+
+<p>Accords : agrume / vanille / fleurs blanches</p>
+
+<button onclick="ajouterPanier('Tharwah Gold Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="lattafa">
+
+<img src="images/parfum7.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Musamam White Intense — Lattafa',
+'images/parfum7.jpg',
+'boisé, coco, ambre',
+'agrumes',
+'coco',
+'ambre, bois'
+)">
+Musamam White Intense — Lattafa
+</h3>
+
+<p>Accords : boisé / coco / ambre</p>
+
+<button onclick="ajouterPanier('Musamam White Intense Lattafa')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="maison-alhambra">
+
+<img src="images/parfum8.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Delilah — Maison Alhambra',
+'images/parfum8.jpg',
+'rose, floral, fruité',
+'lychee',
+'rose',
+'vanille'
+)">
+Delilah — Maison Alhambra
+</h3>
+
+<p>Accords : rose / floral / fruité</p>
+
+<button onclick="ajouterPanier('Delilah Maison Alhambra')">
+Ajouter au panier
+</button>
+
+</div>
+
+
+
+<div class="produit" data-marque="armaf">
+
+<img src="images/parfum9.jpg">
+
+<h3 onclick="ouvrirProduit(
+'Odyssey Marshmallow — Armaf',
+'images/parfum9.jpg',
+'sucré, vanille, lactonique',
+'fruits',
+'marshmallow',
+'vanille'
+)">
+Odyssey Marshmallow — Armaf
+</h3>
+
+<p>Accords : sucré / vanille / lactonique</p>
+
+<button onclick="ajouterPanier('Odyssey Marshmallow Armaf')">
+Ajouter au panier
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="marques" class="page">
+
+<h2>Rechercher une marque</h2>
+
+<div class="search-container">
+
+<input type="text" id="searchInput" placeholder="Ex: Lattafa, Armaf...">
+
+</div>
+
+</section>
+
+
+<section id="livraison" class="page">
+
+<h2>Livraison</h2>
+
+<p>Livraison partout à Abidjan via Yango.</p>
+
+<p>Bonne nouvelle la livraison est gratuite à partir de 50 000F d'achat.</p>
+
+</section>
+
+<section id="contact" class="page">
+
+<h2>Contact</h2>
+
+<p>WhatsApp : 07 05 91 07 13
+
+</p>Gmail: darenciv@gmail.com
+
+</section>
+
+<section id="inscription" class="page">
+
+<h2>Informations de livraison</h2>
+
+<div class="form-client">
+
+<input type="text" id="nom" placeholder="Nom">
+
+<input type="text" id="prenom" placeholder="Prénom">
+
+<input type="text" id="telephone" placeholder="Numéro de téléphone">
+
+<input type="text" id="adresse" placeholder="Lieu de livraison">
+
+<button onclick="enregistrerClient()">
+
+Enregistrer mes informations
+
+</button>
+
+</div>
+
+</section>
+
+<section id="panier-zone">
+
+<div class="panier-contenu">
+
+<h2>Votre panier</h2>
+
+<ul id="liste-panier"></ul>
+
+<a id="commanderWhatsapp" target="_blank">
+<button>Commander sur WhatsApp</button>
+</a>
+
+<a href="https://pay.wave.com/m/M_ci_DL4ZPW5vdhut/c/ci/" target="_blank">
+
+<button class="wave">
+
+Payer avec Wave
+
+</button>
+
+</a>
+
+<button onclick="fermerPanier()">Fermer</button>
+
+</div>
+
+</section>
+
+<div id="produit-modal">
+
+<div class="produit-contenu">
+
+<span onclick="fermerProduit()" class="fermer">✖</span>
+
+<img id="produit-image">
+
+<h2 id="produit-nom"></h2>
+
+<p><b>Accords :</b> <span id="produit-accords"></span></p>
+
+<p><b>Notes de tête :</b> <span id="produit-tete"></span></p>
+
+<p><b>Notes de cœur :</b> <span id="produit-coeur"></span></p>
+
+<p><b>Notes de fond :</b> <span id="produit-fond"></span></p>
+
+<button id="produit-panier">Ajouter au panier</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-container">
+
+<p><strong>SILVER AVENUE</strong> — Since 2025</p>
+
+<p>Parfumerie de luxe à Abidjan</p>
+
+<p>📍 Cocody Faya — Abidjan</p>
+
+<p class="copyright">
+© 2025 Silver Avenue — Tous droits réservés
+</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+<a href="https://wa.me/2250705910713" class="whatsapp-float">
+
+<img src="images/whatsapp.png">
+
+</a>
