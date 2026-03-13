@@ -168,3 +168,18 @@ navigator.serviceWorker.register("service-worker.js")
 .catch(err => console.log("Erreur Service Worker", err))
 
 }
+function toggleMenu(){
+
+let menu = document.getElementById("menu-mobile")
+
+if(menu.style.display === "flex"){
+
+menu.style.display = "none"
+
+}else{
+
+menu.style.display = "flex"
+
+}
+
+}
