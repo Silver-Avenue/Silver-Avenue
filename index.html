@@ -22,28 +22,34 @@
 
 <header>
 
-<img src="images/logo.png" class="logo">
+<header class="header">
 
-<nav>
-
-<button onclick="ouvrirPage('accueil')">Accueil</button>
-
-<button onclick="ouvrirPage('parfums')">Parfums</button>
-
-<button onclick="ouvrirPage('marques')">Marques</button>
-
-<button onclick="ouvrirPage('livraison')">Livraison</button>
-
-<button onclick="ouvrirPage('contact')">Contact</button>
-
-<div class="panier" onclick="ouvrirPanier()">
-
-<button onclick="ouvrirPanier()">
-🛒 Panier (<span id="compteur-panier">0</span>)
-</button>
+<div class="menu-icon" onclick="toggleMenu()">
+☰
 </div>
 
-<nav>
+<img src="images/logo.png" class="logo">
+
+<button onclick="ouvrirPanier()" class="panier">
+🛒 Panier (<span id="compteur-panier">0</span>)
+</button>
+
+</header>
+
+
+<nav id="menu-mobile" class="menu-mobile">
+
+<button onclick="changerPage('accueil')">Accueil</button>
+
+<button onclick="changerPage('parfums')">Parfums</button>
+
+<button onclick="changerPage('marques')">Marques</button>
+
+<button onclick="changerPage('livraison')">Livraison</button>
+
+<button onclick="changerPage('contact')">Contact</button>
+
+</nav>
 
 </header>
 
