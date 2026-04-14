@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silver Avenue – Parfumerie Arabe de Luxe</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- PWA Manifest & Favicon -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+    <link rel="apple-touch-icon" href="images/logo-192.png" />
+    <meta name="theme-color" content="#C9A84C" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Silver Avenue" />
+    <meta
+      name="description"
+      content="Parfumerie Arabe de Luxe – Lattafa, Al Haramain et plus. Livraison Abidjan & Dakar."
+    />
+  </head>
+  <body>
+    <!-- ══════════════════════════════════════
+     HEADER
+══════════════════════════════════════ -->
+    <header>
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon">SA</div>
+          <div>
+            <div class="logo-text">Silver Avenue</div>
+            <div class="logo-sub">Parfumerie Arabe de Luxe · Since 2025</div>
+          </div>
+        </a>
+
+        <nav>
+          <a href="#parfums">Parfums</a>
+          <a href="#brands">Marques</a>
+          <a href="#livraison">Livraison</a>
+          <a href="#commande">Commander</a>
+          <a href="#paiement">Paiement</a>
+          <a href="#contact">Contact</a>
+          <a href="https://wa.me/2250705910713" target="_blank" class="nav-cta">
+            <img
+              src="images/whatsapp.png"
+              alt=""
+              style="width: 14px; height: 14px"
+            />
+            WhatsApp
+          </a>
+        </nav>
+
+        <div class="hamburger" onclick="toggleNav()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="nav-mobile" id="mobileNav">
+        <a href="#parfums" onclick="closeNav()">Parfums</a>
+        <a href="#brands" onclick="closeNav()">Marques</a>
+        <a href="#livraison" onclick="closeNav()">Livraison</a>
+        <a href="#commande" onclick="closeNav()">Commander</a>
+        <a href="#paiement" onclick="closeNav()">Paiement</a>
+        <a href="#contact" onclick="closeNav()">Contact</a>
+        <a href="https://wa.me/2250705910713" target="_blank">
+          <img
+            src="images/whatsapp.png"
+            alt=""
+            style="width: 16px; height: 16px"
+          />
+          WhatsApp Abidjan
+        </a>
+        <a href="https://wa.me/221773982634" target="_blank">
+          <img
+            src="images/whatsapp.png"
+            alt=""
+            style="width: 16px; height: 16px"
+          />
+          WhatsApp Dakar
+        </a>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <div>
+          <div class="hero-label">Parfumerie Arabe de Prestige</div>
+          <h1>L'art du <em>parfum</em><br />oriental</h1>
+          <p class="hero-desc">
+            Découvrez notre sélection exclusive de fragrances orientales
+            authentiques. Lattafa, Al Haramain, Maison Alhambra et plus —
+            livrées à Abidjan et Dakar.
+          </p>
+          <div class="hero-actions">
+            <a href="#parfums" class="btn-primary">Explorer les parfums</a>
+            <a
+              href="https://wa.me/2250705910713"
+              target="_blank"
+              class="btn-outline"
+            >
+              <img
+                src="images/whatsapp.png"
+                alt=""
+                style="width: 16px; height: 16px"
+              />
+              Commander via WhatsApp
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-num">12+</div>
+              <div class="stat-label">Parfums</div>
+            </div>
+            <div>
+              <div class="stat-num">5</div>
+              <div class="stat-label">Marques</div>
+            </div>
+            <div>
+              <div class="stat-num">2</div>
+              <div class="stat-label">Villes</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-ring"></div>
+          <div class="hero-ring"></div>
+          <div class="hero-center">
+            <span class="big">SA</span>
+            <span class="since">Since 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     BARRE DE RECHERCHE
+══════════════════════════════════════ -->
+    <div class="search-section">
+      <div class="search-inner">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Rechercher un parfum, une note olfactive, une marque..."
+            oninput="filterPerfumes()"
+          />
+        </div>
+        <select
+          class="brand-filter"
+          id="brandFilter"
+          onchange="filterPerfumes()"
+        >
+          <option value="">Toutes les marques</option>
+          <option>Lattafa</option>
+          <option>Al Haramain</option>
+          <option>Maison Alhambra</option>
+          <option>Maison Asrar</option>
+          <option>Armaf</option>
+        </select>
+        <select
+          class="brand-filter"
+          id="genderFilter"
+          onchange="filterPerfumes()"
+          style="min-width: 130px"
+        >
+          <option value="">Tous</option>
+          <option value="femme">Femme</option>
+          <option value="mixte">Mixte</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     PARFUMS
+══════════════════════════════════════ -->
+    <section id="parfums" style="background: var(--dark)">
+      <div class="section-inner">
+        <div class="section-label">Notre Sélection</div>
+        <h2 class="section-title">Nos <em>Parfums</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Chaque flacon raconte une histoire. Explorez nos fragrances orientales
+          soigneusement sélectionnées — disponibles sur commande.
+        </p>
+
+        <!-- Filtres par marque -->
+        <div class="brand-tags">
+          <button class="brand-tag active" onclick="setTag(this, '')">
+            Tous
+          </button>
+          <button class="brand-tag" onclick="setTag(this, 'Lattafa')">
+            Lattafa
+          </button>
+          <button class="brand-tag" onclick="setTag(this, 'Al Haramain')">
+            Al Haramain
+          </button>
+          <button class="brand-tag" onclick="setTag(this, 'Maison Alhambra')">
+            Maison Alhambra
+          </button>
+          <button class="brand-tag" onclick="setTag(this, 'Maison Asrar')">
+            Maison Asrar
+          </button>
+          <button class="brand-tag" onclick="setTag(this, 'Armaf')">
+            Armaf
+          </button>
+        </div>
+
+        <!-- Grille générée par JS -->
+        <div class="perfume-grid" id="perfumeGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     MARQUES
+══════════════════════════════════════ -->
+    <section id="brands">
+      <div class="section-inner">
+        <div class="section-label">Nos Maisons</div>
+        <h2 class="section-title">Rechercher par <em>Marque</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Cliquez sur une maison pour explorer ses créations disponibles chez
+          Silver Avenue.
+        </p>
+
+        <div class="brands-grid">
+          <div class="brand-card" onclick="goToBrand('Lattafa')">
+            <div class="brand-icon-big">🏺</div>
+            <div class="brand-card-name">Lattafa Perfumes</div>
+            <div class="brand-card-count">8 parfums disponibles</div>
+          </div>
+          <div class="brand-card" onclick="goToBrand('Al Haramain')">
+            <div class="brand-icon-big">🕌</div>
+            <div class="brand-card-name">Al Haramain</div>
+            <div class="brand-card-count">1 parfum disponible</div>
+          </div>
+          <div class="brand-card" onclick="goToBrand('Maison Alhambra')">
+            <div class="brand-icon-big">🦌</div>
+            <div class="brand-card-name">Maison Alhambra</div>
+            <div class="brand-card-count">1 parfum disponible</div>
+          </div>
+          <div class="brand-card" onclick="goToBrand('Maison Asrar')">
+            <div class="brand-icon-big">✨</div>
+            <div class="brand-card-name">Maison Asrar</div>
+            <div class="brand-card-count">1 parfum disponible</div>
+          </div>
+          <div class="brand-card" onclick="goToBrand('Armaf')">
+            <div class="brand-icon-big">🌊</div>
+            <div class="brand-card-name">Armaf</div>
+            <div class="brand-card-count">1 parfum disponible</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     LIVRAISON
+══════════════════════════════════════ -->
+    <section id="livraison">
+      <div class="section-inner">
+        <div class="section-label">Livraison</div>
+        <h2 class="section-title">Livraison <em>Rapide</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Vos parfums livrés directement chez vous à Abidjan et Dakar via Yango
+          Livraison.
+        </p>
+
+        <div class="livraison-grid">
+          <div class="livraison-card">
+            <div class="livraison-icon">🛵</div>
+            <h3>Yango Livraison</h3>
+            <p>
+              Livraison rapide et fiable via
+              <span class="hl">Yango Livraison</span> à Abidjan et ses environs.
+              Commandez et recevez le jour même.
+            </p>
+          </div>
+          <div class="livraison-card">
+            <div class="livraison-icon">📍</div>
+            <h3>Zones desservies</h3>
+            <p>
+              <span class="hl">Abidjan, Côte d'Ivoire</span><br />+225
+              07.05.91.07.13 <br /><br />
+              <span class="hl">Dakar, Sénégal</span><br />+221 77 398 26 34
+            </p>
+          </div>
+          <div class="livraison-card">
+            <div class="livraison-icon">⏱️</div>
+            <h3>Délai</h3>
+            <p>
+              Livraison en <span class="hl">2 à 4 heures</span> après
+              confirmation de commande et de paiement. Suivi WhatsApp en temps
+              réel.
+            </p>
+          </div>
+          <div class="livraison-card">
+            <div class="livraison-icon">📦</div>
+            <h3>Emballage soigné</h3>
+            <p>
+              Chaque flacon est soigneusement emballé pour garantir sa sécurité
+              et sa <span class="hl">présentation impeccable</span> à la
+              livraison.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     COMMENT COMMANDER
+══════════════════════════════════════ -->
+    <section id="commande" style="background: var(--dark2)">
+      <div class="section-inner">
+        <div class="section-label">Comment Commander</div>
+        <h2 class="section-title">Passer votre <em>Commande</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Simple, rapide et sécurisé. Votre parfum en 4 étapes.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Choisissez votre parfum</h3>
+            <p>
+              Parcourez le catalogue, consultez les accords olfactifs et trouvez
+              la fragrance qui vous correspond.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Contactez-nous</h3>
+            <p>
+              Envoyez votre commande via WhatsApp au
+              <strong>+225 07.05.91.07.13</strong> (CI) ou
+              <strong>+221 77 398 26 34</strong> (SN).
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Effectuez le paiement</h3>
+            <p>
+              Payez par <strong>Wave</strong> via notre lien sécurisé ou par
+              <strong>Mobile Money</strong> avec confirmation WhatsApp.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h3>Recevez votre commande</h3>
+            <p>
+              Votre parfum est livré via Yango Livraison en 2 à 4 heures.
+              Profitez de votre nouvelle fragrance !
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     PAIEMENT
+══════════════════════════════════════ -->
+    <section id="paiement">
+      <div class="section-inner">
+        <div class="section-label">Modes de Paiement</div>
+        <h2 class="section-title">Paiement <em>Sécurisé</em></h2>
+        <div class="divider"></div>
+
+        <div class="payment-grid">
+          <div class="payment-methods">
+            <div class="payment-method">
+              <div class="pm-icon">
+                <img src="images/wave.png" alt="Wave" style="height: 32px" />
+              </div>
+              <div class="pm-info">
+                <h4>Wave</h4>
+                <p>
+                  Payez via notre lien Wave sécurisé. Transfert instantané,
+                  confirmation immédiate. Disponible en CI et au Sénégal.
+                </p>
+              </div>
+            </div>
+            <div class="payment-method">
+              <div class="pm-icon">📱</div>
+              <div class="pm-info">
+                <h4>Mobile Money via WhatsApp</h4>
+                <p>
+                  Orange Money, MTN Money, Free Money — effectuez votre paiement
+                  et envoyez la confirmation par WhatsApp.
+                </p>
+              </div>
+            </div>
+            <div class="payment-method">
+              <div class="pm-icon">
+                <img
+                  src="images/whatsapp.png"
+                  alt="WhatsApp"
+                  style="height: 32px"
+                />
+              </div>
+              <div class="pm-info">
+                <h4>Paiement WhatsApp</h4>
+                <p>
+                  Discutez de votre commande et finalisez le paiement
+                  directement via notre numéro WhatsApp professionnel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="wave-box">
+            <div class="wave-logo-area">
+              <img src="images/wave.png" alt="Wave" />
+            </div>
+            <h3>Payer avec Wave</h3>
+            <p>
+              Cliquez sur le bouton ci-dessous pour effectuer votre paiement
+              Wave en toute sécurité. Rapide, fiable, sans frais
+              supplémentaires.
+            </p>
+            <a
+              href="https://pay.wave.com/m/M_ci_DL4ZPW5vdhut/c/ci/"
+              target="_blank"
+              class="btn-wave-big"
+            >
+              <img src="images/wave.png" alt="Wave" /> Payer via Wave maintenant
+            </a>
+            <p
+              style="
+                margin-top: 1.2rem;
+                font-size: 0.68rem;
+                color: rgba(248, 243, 232, 0.35);
+              "
+            >
+              Après paiement, envoyez le reçu sur WhatsApp pour confirmer votre
+              commande.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+    <section id="contact" style="background: var(--dark2)">
+      <div class="section-inner">
+        <div class="section-label">Nous Contacter</div>
+        <h2 class="section-title">Restons en <em>Contact</em></h2>
+        <div class="divider"></div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div class="ci-info">
+                <h4>Abidjan – Côte d'Ivoire</h4>
+                <a href="tel:+2250705910713">+225 07.05.91.07.13</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div class="ci-info">
+                <h4>Dakar – Sénégal</h4>
+                <a href="tel:+221773982634">+221 77 398 26 34</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">✉️</div>
+              <div class="ci-info">
+                <h4>Email</h4>
+                <a href="mailto:DarenCiv@gmail.com">DarenCiv@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <img
+                  src="images/whatsapp.png"
+                  alt="WhatsApp"
+                  style="width: 22px; height: 22px"
+                />
+              </div>
+              <div class="ci-info">
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/2250705910713" target="_blank"
+                  >WhatsApp Abidjan (CI)</a
+                ><br />
+                <a href="https://wa.me/221773982634" target="_blank"
+                  >WhatsApp Dakar (SN)</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">🕐</div>
+              <div class="ci-info">
+                <h4>Horaires</h4>
+                <p>Lun – Sam : 8h00 – 20h00<br />Commandes WhatsApp 24h/24</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Passer une commande</h3>
+            <div class="form-group">
+              <label>Votre nom</label>
+              <input type="text" id="fName" placeholder="Prénom et nom" />
+            </div>
+            <div class="form-group">
+              <label>Téléphone / WhatsApp</label>
+              <input type="tel" id="fTel" placeholder="+225 ..." />
+            </div>
+            <div class="form-group">
+              <label>Parfum souhaité</label>
+              <select id="formPerfume">
+                <option value="">Sélectionner un parfum</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message ou question</label>
+              <textarea id="fMsg" placeholder="Votre message..."></textarea>
+            </div>
+            <button class="btn-submit" onclick="sendWA()">
+              <img src="images/whatsapp.png" alt="" /> Envoyer via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">SA</div>
+            <div>
+              <div class="logo-text">Silver Avenue</div>
+              <div class="logo-sub">Parfumerie Arabe · Since 2025</div>
+            </div>
+          </div>
+          <p>
+            Votre destination pour les parfums orientaux d'exception. Lattafa,
+            Al Haramain et plus — livrés à domicile en Côte d'Ivoire et au
+            Sénégal.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#parfums">Parfums</a></li>
+            <li><a href="#brands">Marques</a></li>
+            <li><a href="#livraison">Livraison</a></li>
+            <li><a href="#commande">Commander</a></li>
+            <li><a href="#paiement">Paiement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marques</h4>
+          <ul>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goToBrand('Lattafa');
+                  return false;
+                "
+                >Lattafa</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goToBrand('Al Haramain');
+                  return false;
+                "
+                >Al Haramain</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goToBrand('Maison Alhambra');
+                  return false;
+                "
+                >Maison Alhambra</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goToBrand('Maison Asrar');
+                  return false;
+                "
+                >Maison Asrar</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goToBrand('Armaf');
+                  return false;
+                "
+                >Armaf</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+2250705910713">📞 CI : 07.05.91.07.13</a></li>
+            <li><a href="tel:+221773982634">📞 SN : 77 398 26 34</a></li>
+            <li>
+              <a href="mailto:DarenCiv@gmail.com">✉️ DarenCiv@gmail.com</a>
+            </li>
+            <li>
+              <a href="https://wa.me/2250705910713" target="_blank">
+                <img src="images/whatsapp.png" alt="" /> WhatsApp CI
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pay.wave.com/m/M_ci_DL4ZPW5vdhut/c/ci/"
+                target="_blank"
+              >
+                <img src="images/wave.png" alt="" /> Payer Wave
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Silver Avenue. Tous droits réservés.</p>
+        <p class="footer-gold">🌟 Parfumerie Arabe de Luxe · Abidjan & Dakar</p>
+      </div>
+    </footer>
+
+    <!-- ══════════════════════════════════════
+     BOUTON WHATSAPP FLOTTANT
+══════════════════════════════════════ -->
+    <a
+      class="sticky-wa"
+      href="https://wa.me/2250705910713"
+      target="_blank"
+      title="Commander maintenant"
+    >
+      <img src="images/whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <!-- ══════════════════════════════════════
+     MODAL FICHE PARFUM
+══════════════════════════════════════ -->
+    <div class="modal-overlay" id="overlay" onclick="closeModal(event)">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+        <div class="modal-header" id="mHead"></div>
+        <div class="modal-body" id="mBody"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
